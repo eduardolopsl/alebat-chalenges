@@ -1,0 +1,26 @@
+@mixin responsive($medida: 64em) {
+  @media screen and (max-width: $medida) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $align_items: center, $justify_content: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align_items;
+  justify-content: $justify_content;
+}
+
+@mixin icons($icon, $size: fs-extra-small) {
+  font-family: 'Material Icons';
+  content: map-get($map: $icons, $key: $icon);
+  font-size: map-get($map: $font-size, $key: $size);
+}
+
+@mixin gradient($color: c-black) {
+  background: linear-gradient(
+    to right,
+    $color 0%,
+    map-get($map: $colors, $key: c-transparent) 100%
+  );
+}

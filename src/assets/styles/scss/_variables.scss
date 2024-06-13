@@ -1,0 +1,93 @@
+/*********** VARIABLES GLOBALES *************/
+
+$colors: (
+  'c-white': #ffffff,
+  'c-light-grey': #f0f0f0,
+  'c-medium-grey': #869fb2,
+  'c-form-grey': #616161,
+  'c-light-blue': #d2e3fc,
+  'c-black': #000000,
+  'c-red': red,
+  'c-green': green,
+  'c-graphite': #1a1a1a,
+  'c-principal-color': #009ba2,
+  'c-transparent': #00000000,
+  'c-facebook': #1877f2,
+  'c-linkedin': #0077b5,
+  'c-graphite-transparent': #1a1a1a80,
+);
+
+$fonts: (
+  'f-font-thin': 'neulis-sans-thin',
+  'f-font-extraLight': 'neulis-sans-extra-light',
+  'f-font-light': 'neulis-sans-light',
+  'f-font-book': 'neulis-sans-regular',
+  'f-font-medium': 'neulis-sans-medium',
+  'f-font-semiBold': 'neulis-sans-semi-bold',
+  'f-font-bold': 'neulis-sans-bold',
+  'f-font-extraBold': 'neulis-sans-extra-bold',
+  'f-font-black': 'neulis-sans-black',
+  'f-material-icons': 'Material Icons',
+);
+
+$font-size: (
+  'fs-detail-paragraph': 0.7rem,
+  'fs-extra-small-button': 0.8rem,
+  'fs-extra-small': 0.9rem,
+  'fs-small': 1rem,
+  'fs-medium': 1.5rem,
+  'fs-big': 2rem,
+  'fs-extra-big': 3rem,
+  'fs-titular-big': 4rem,
+);
+
+$sizes: (
+  's-navbar': 120rem,
+  's-body': 120rem,
+  's-general-padding': 0 8rem,
+  's-general-padding-mobile': 0 1rem,
+  's-margin-top': 10rem 0 0 0,
+  's-margin-top-banner': 5rem 0 0 0,
+  's-margin-bottom-banner': 0 0 5rem,
+  's-margin-blocks': 8rem 0,
+  's-margin-blocks-mobile': 4rem 0,
+  's-margin-elements': 4rem 0,
+  's-border-radius-button': 0.25rem,
+  's-border-radius-textField': 0.125rem,
+  's-logo': 9rem,
+);
+
+$transitions: (
+  't-button': 0.5s ease,
+);
+
+$icons: (
+  'error': '\e000',
+  'warning': '⚠',
+  'info': 'ⓘ',
+  'close': '\e5cd',
+);
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+    format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
