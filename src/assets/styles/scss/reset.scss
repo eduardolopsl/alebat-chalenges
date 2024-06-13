@@ -1,0 +1,250 @@
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  max-height: inherit;
+  /* opcional */
+  object-fit: cover;
+  /* opcional */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-extra-small);
+  }
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+  text-wrap: pretty;
+
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-extra-small);
+  }
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-extra-small);
+  }
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1 {
+  font-size: map-get($map: $font-size, $key: fs-extra-big);
+  font-family: map-get($map: $fonts, $key: f-font-light);
+  text-wrap: balance;
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-medium);
+  }
+}
+h2 {
+  font-size: map-get($map: $font-size, $key: fs-big);
+  font-family: map-get($map: $fonts, $key: f-font-thin);
+  text-wrap: balance;
+
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-medium);
+  }
+}
+h3 {
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-bold);
+  text-wrap: balance;
+}
+h4,
+h5,
+h6,
+p,
+span,
+a,
+blockquote,
+i,
+b,
+u,
+em {
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  hyphens: none;
+}
+
+/* Estilos predeterminados de los parrafos */
+p {
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+  text-wrap: pretty;
+
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-extra-small);
+  }
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: var(--c-transparent);
+  color: inherit;
+  display: block;
+  /* opcional */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  max-width: map-get($map: $sizes, $key: s-body);
+  margin: auto;
+  background-color: var(--c-black);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+  color: var(--c-white);
+  min-height: 100vh;
+  font-size: 100%;
+  /* opcional */
+  hyphens: auto;
+}
+
+/** Barra Scroll **/
+
+::-webkit-scrollbar {
+  width: 0.4375em;
+  height: auto;
+  border-radius: 0.25em;
+  background-color: var(--c-black);
+  @media (max-width: 53.625em) {
+    width: 0;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  width: 100%;
+  background: var(--c-principal-color);
+  border-radius: 0.25em;
+
+  @media (max-width: 53.625em) {
+    width: 0;
+  }
+}
+
+.margin-top {
+  margin: map-get($map: $sizes, $key: s-margin-top);
+}
+
+.margin-top-banner {
+  margin: map-get($map: $sizes, $key: s-margin-top-banner);
+}
+
+.margin-blocks {
+  margin: map-get($map: $sizes, $key: s-margin-blocks);
+}
+
+.outstanding {
+  font-size: map-get($map: $font-size, $key: fs-extra-big);
+  font-family: map-get($map: $fonts, $key: f-font-bold);
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-big);
+  }
+}
+
+.underscore {
+  font-size: map-get($map: $font-size, $key: fs-big);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+  @include responsive() {
+    font-size: map-get($map: $font-size, $key: fs-medium);
+  }
+}
+
+.call-to-action {
+  font-size: map-get($map: $font-size, $key: fs-small);
+  font-family: map-get($map: $fonts, $key: f-font-bold);
+}
+.call-to-action-small {
+  font-size: map-get($map: $font-size, $key: fs-extra-small);
+  font-family: map-get($map: $fonts, $key: f-font-bold);
+}
+
+.detail-paragraph {
+  font-size: map-get($map: $font-size, $key: fs-detail-paragraph);
+  font-family: map-get($map: $fonts, $key: f-font-book);
+}
+.modal-enter-active,
+.modal-leave-active {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+.modal-enter-from,
+.modal-leave-to {
+  transform: translateY(200em);
+  visibility: hidden;
+  opacity: 0;
+}

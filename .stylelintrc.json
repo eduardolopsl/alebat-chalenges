@@ -1,0 +1,32 @@
+{
+  "extends": ["stylelint-config-recommended-vue/scss"],
+  "overrides": [
+    {
+      "files": ["*.vue", "**/*.vue"],
+      "rules": {
+        "unit-allowed-list": [
+          "em",
+          "rem",
+          "vh",
+          "vw",
+          "%",
+          "s",
+          "deg",
+          "fr",
+          "pt",
+          "ch",
+          "ms",
+          "dvh",
+          "dvw"
+        ],
+        "at-rule-no-unknown": null,
+        "scss/no-global-function-names": null,
+        "scss/at-extend-no-missing-placeholder": null,
+        "rule-empty-line-before": null,
+        "block-opening-brace-space-before": "always",
+        "font-family-no-missing-generic-family-keyword": null,
+        "declaration-no-important": true
+      }
+    }
+  ]
+}

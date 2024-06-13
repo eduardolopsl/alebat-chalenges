@@ -18,31 +18,32 @@ Se te ha asignado una tarea para desarrollar una aplicación web sencilla utiliz
 ### Datos
 
 1. Crea un archivo `data/items.json` que contenga un array de objetos. Cada objeto debe tener las siguientes propiedades:
-    ```json
-    [
-        {
-            "id": 1,
-            "name": "Item 1",
-            "description": "Description for Item 1"
-        },
-        {
-            "id": 2,
-            "name": "Item 2",
-            "description": "Description for Item 2"
-        }
-        // ...más items
-    ]
-    ```
+   ```json
+   [
+     {
+       "id": 1,
+       "name": "Item 1",
+       "description": "Description for Item 1"
+     },
+     {
+       "id": 2,
+       "name": "Item 2",
+       "description": "Description for Item 2"
+     }
+     // ...más items
+   ]
+   ```
 
 ### Funcionalidades
 
 1. **Página Principal**:
-    - Leer los datos desde el archivo `items.json` mediante una llamada HTTP
-    - Mostrar los datos en una lista.
-    - Cada ítem de la lista debe ser un enlace que redirige a la página de detalle del ítem.
+
+   - Leer los datos desde el archivo `items.json` mediante una llamada HTTP
+   - Mostrar los datos en una lista.
+   - Cada ítem de la lista debe ser un enlace que redirige a la página de detalle del ítem.
 
 2. **Página de Detalle**:
-    - Mostrar la información completa del ítem seleccionado (al menos `name` y `description`).
+   - Mostrar la información completa del ítem seleccionado (al menos `name` y `description`).
 
 ### Consideraciones
 
