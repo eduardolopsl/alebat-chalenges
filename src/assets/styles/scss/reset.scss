@@ -23,7 +23,6 @@ figure {
   /* opcional */
   object-fit: cover;
   /* opcional */
-  object-position: center center;
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
@@ -32,7 +31,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-book);
 
   @include responsive() {
     font-size: map-get($map: $font-size, $key: fs-extra-small);
@@ -43,7 +41,6 @@ a {
 p a {
   display: inline;
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-book);
   text-wrap: pretty;
 
   @include responsive() {
@@ -55,7 +52,6 @@ p a {
 li {
   list-style-type: none;
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-book);
 
   @include responsive() {
     font-size: map-get($map: $font-size, $key: fs-extra-small);
@@ -71,7 +67,6 @@ html {
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1 {
   font-size: map-get($map: $font-size, $key: fs-extra-big);
-  font-family: map-get($map: $fonts, $key: f-font-light);
   text-wrap: balance;
   @include responsive() {
     font-size: map-get($map: $font-size, $key: fs-medium);
@@ -79,7 +74,6 @@ h1 {
 }
 h2 {
   font-size: map-get($map: $font-size, $key: fs-big);
-  font-family: map-get($map: $fonts, $key: f-font-thin);
   text-wrap: balance;
 
   @include responsive() {
@@ -88,7 +82,6 @@ h2 {
 }
 h3 {
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-bold);
   text-wrap: balance;
 }
 h4,
@@ -111,7 +104,6 @@ em {
 /* Estilos predeterminados de los parrafos */
 p {
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-book);
   text-wrap: pretty;
 
   @include responsive() {
@@ -164,11 +156,11 @@ svg {
 body {
   max-width: map-get($map: $sizes, $key: s-body);
   margin: auto;
-  background-color: var(--c-black);
-  font-family: map-get($map: $fonts, $key: f-font-book);
-  color: var(--c-white);
-  min-height: 100vh;
+  background-color: map-get($map: $colors, $key: c-black);
+  color: map-get($map: $colors, $key: c-white);
+  min-height: 95vh;
   font-size: 100%;
+  position: relative;
   /* opcional */
   hyphens: auto;
 }
@@ -179,7 +171,7 @@ body {
   width: 0.4375em;
   height: auto;
   border-radius: 0.25em;
-  background-color: var(--c-black);
+  background-color: map-get($map: $colors, $key: c-black);
   @media (max-width: 53.625em) {
     width: 0;
   }
@@ -187,7 +179,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   width: 100%;
-  background: var(--c-principal-color);
+  background: map-get($map: $colors, $key: c-principal-color);
   border-radius: 0.25em;
 
   @media (max-width: 53.625em) {
@@ -209,7 +201,6 @@ body {
 
 .outstanding {
   font-size: map-get($map: $font-size, $key: fs-extra-big);
-  font-family: map-get($map: $fonts, $key: f-font-bold);
   @include responsive() {
     font-size: map-get($map: $font-size, $key: fs-big);
   }
@@ -217,7 +208,6 @@ body {
 
 .underscore {
   font-size: map-get($map: $font-size, $key: fs-big);
-  font-family: map-get($map: $fonts, $key: f-font-book);
   @include responsive() {
     font-size: map-get($map: $font-size, $key: fs-medium);
   }
@@ -225,16 +215,13 @@ body {
 
 .call-to-action {
   font-size: map-get($map: $font-size, $key: fs-small);
-  font-family: map-get($map: $fonts, $key: f-font-bold);
 }
 .call-to-action-small {
   font-size: map-get($map: $font-size, $key: fs-extra-small);
-  font-family: map-get($map: $fonts, $key: f-font-bold);
 }
 
 .detail-paragraph {
   font-size: map-get($map: $font-size, $key: fs-detail-paragraph);
-  font-family: map-get($map: $fonts, $key: f-font-book);
 }
 .modal-enter-active,
 .modal-leave-active {
