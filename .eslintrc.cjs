@@ -9,7 +9,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard', 'prettier'],
+  extends: [
+    '@vue/eslint-config-typescript',
+    '@vue/eslint-config-prettier',
+    'standard',
+    'prettier',
+  ],
   overrides: [
     {
       env: {
@@ -26,7 +31,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', 'prettier', 'promise'],
   rules: {
     'no-undef': RULES.OFF,
     'prettier/prettier': RULES.ERROR,
