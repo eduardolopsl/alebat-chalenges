@@ -1,29 +1,78 @@
 <script setup>
-import { ref, computed, watchEffect } from 'vue'
-import { getAllItems } from '@/services/itemsApiServices'
+import { ref, provide } from 'vue'
+import ItemList from '@/components/home/ItemList.vue'
+import RedirectionImg from '@/components/home/RedirectionImg.vue'
 
-const items = ref([])
+const imagesData = [
+  {
+    imgSrc:
+      'https://ih0.redbubble.net/image.1700939694.8485/raf,360x360,075,t,fafafa:ca443f4786.jpg',
+    redirection: 'https://www.youtube.com/watch?v=o-YzIok4Im4',
+  },
+  {
+    imgSrc: '/img/rodri.webp',
+    redirection: 'https://www.youtube.com/watch?v=8FZ4A6PrxUE',
+  },
+  {
+    imgSrc: '/img/puch.webp',
+    redirection: 'https://www.youtube.com/watch?v=QEV3FNFwJWQ',
+  },
+  {
+    imgSrc: '/img/borja.webp',
+    redirection: 'https://www.youtube.com/watch?v=GnhTAZ5TJE8',
+  },
+]
 
-watchEffect(async () => {
-  try {
-    const fetchedItems = await getAllItems()
-    console.log(fetchedItems)
-    items.value = fetchedItems
-  } catch (error) {
-    console.error('Error fetching items:', error)
-  }
-})
+const unclickable = ref(false)
+
+const imgRedirect = (redirection) => {
+  window.location.href = redirection
+}
+
+const makeImagesUnclickable = () => {
+  unclickable.value = true
+}
+
+provide('makeUnclickable', makeImagesUnclickable)
 </script>
 
 <template>
-  <section v-if="items">
-    <h1>Items</h1>
-    <ul v-for="(item, index) in items" :key="index">
-      {{
-        item.name
-      }}
-    </ul>
-  </section>
+  <main class="home">
+    <ItemList class="home__list"></ItemList>
+    <aside class="home__aside">
+      <RedirectionImg
+        v-for="(image, index) in imagesData"
+        :img-src="image.imgSrc"
+        :redirection="image.redirection"
+        :unclickable="unclickable"
+        @img-redirection="imgRedirect"
+        :key="index"
+      />
+    </aside>
+  </main>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.home {
+  height: 50em;
+  padding: 3em;
+  @include flex(row, flex-start, flex-start);
+  gap: 5em;
+  @include responsive() {
+    gap: 1.5em;
+  }
+  &__title {
+    padding: 0 0 0.5em;
+  }
+  &__aside {
+    width: 25em;
+    height: 100%;
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    gap: 2em;
+    @include responsive() {
+      width: 5em;
+    }
+  }
+}
+</style>

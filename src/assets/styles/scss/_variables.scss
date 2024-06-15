@@ -6,11 +6,12 @@ $colors: (
   'c-medium-grey': #869fb2,
   'c-form-grey': #616161,
   'c-light-blue': #d2e3fc,
-  'c-black': #000000,
+  'c-black': rgba(2, 4, 32, 1),
+  'c-light-black': rgba(30, 41, 59, 1),
   'c-red': red,
   'c-green': green,
   'c-graphite': #1a1a1a,
-  'c-principal-color': #009ba2,
+  'c-principal-color': #0f52ba,
   'c-transparent': #00000000,
   'c-facebook': #1877f2,
   'c-linkedin': #0077b5,
@@ -88,6 +89,5 @@ $icons: (
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
